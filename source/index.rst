@@ -6,7 +6,7 @@
 Welcome to LCZ and tempertature analysis with QGIS's documentation!
 ===================================================================
 
-This is the first text. You can go to :ref:`another file <requirements>` if you want.
+This is the first text. You can go to :ref:`another file <requirements>` if you want. but also if you don't
 
 
 .. toctree::
