@@ -1,6 +1,7 @@
-# ignore DS_Store, .index.rst.swp and make.bat files, build folder and _templates subfolder
+# ignore DS_Store, index.rst.swp, make.bat and Makefile, build folder and _templates subfolder
 .DS_Store
 make.bat
 .index.rst.swp
 build/
 source/_templates/
+Makefile
