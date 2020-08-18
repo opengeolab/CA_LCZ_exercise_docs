@@ -1,0 +1,5 @@
+# ignore DS_Store and make.bat files, build folder and _templates subfolder
+.DS_Store
+make.bat
+build/
+source/_templates/
