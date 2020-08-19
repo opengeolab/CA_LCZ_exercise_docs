@@ -1,13 +1,13 @@
 
-.. _requirements:
+.. _lcz:
 
-software and data requirments
+Local Climate Zone
 =============================
 
 * this contains instructions to follow in order to start the exercise
 
 
-before you start you have to install
+Case study: Milan
 ------------------------------------
 
 1. **QGIS3.10** |qgisicon|
