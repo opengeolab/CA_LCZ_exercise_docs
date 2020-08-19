@@ -3,19 +3,50 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to LCZ and tempertature analysis with QGIS's documentation!
-===================================================================
+Hands-on exercise: LCZ and air tempertature analysis with QGIS
+===========================================================================
 
-This is the first text. You can go to :ref:`another file <cop_climate>` if you want. but also if you don't
+This tutorial will focus on the use of `Copernicus <https://www.copernicus.eu/en>`_ data for assessing local differences in air temperature according to the land-use features within highly urbanized cities. 
+
+Through a computer exercise, you will analyse the case of Milan (Italy) using air temperature data from the `Copernicus Climate Change Service (C3S) <https://climate.copernicus.eu>`_ and the `Local Climate Zones (LCZ) <http://www.wudapt.org>`_ map of the city, derived from `Sentinel-2 <https://sentinel.esa.int/web/sentinel/missions/sentinel-2>`_ imagery.
+
+You will learn how to access and download `C3S data <https://cds.climate.copernicus.eu/#!/home>`_ and how to process them in `QGIS <https://qgis.org/en/site/forusers/download.html>`_ |qgisicon| to obtain a quantitative insight into the LCZ influence on air temperature. 
+
+.. |qgisicon| image:: images/qgis_icon.png
+   :scale: 8% 
+
+.. admonition:: Requirements
+
+   Basic knowledge of QGIS and raster data analysis is required. Before starting, you have to `install QGIS 3.10 <https://qgis.org/en/site/forusers/download.html>`_ (or higher) on your machine and `create a personal account <https://cds.climate.copernicus.eu/user/login?destination=%2F%23!%2Fhome>`_ to access C3S data. 
+
 
 
 .. toctree::
    :maxdepth: 2
+   :caption: Table of Contents
 
    cop_climate
    lcz
    analysis
 
 
+.. Path:
 
-  
+.. cd /Users/daniele/Desktop/copernicus_exercise/CA_LCZ_exercise_docs
+
+.. Build HTML:
+
+.. sphinx-build -b html /Users/daniele/Desktop/copernicus_exercise/CA_LCZ_exercise_docs/source /Users/daniele/Desktop/copernicus_exercise/CA_LCZ_exercise_docs/build
+
+.. Build Latext: 
+
+.. sphinx-build -M latexpdf /Users/daniele/Desktop/copernicus_exercise/CA_LCZ_exercise_docs/source /Users/daniele/Desktop/copernicus_exercise/CA_LCZ_exercise_docs/build
+
+.. Git actions:
+
+.. vim .gitignore
+.. git status
+.. git add .
+.. git commit -m"commit comment"
+.. git push origin master
+

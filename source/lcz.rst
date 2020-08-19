@@ -1,7 +1,7 @@
 
 .. _lcz:
 
-Local Climate Zone
+Local Climate Zones
 =============================
 
 * this contains instructions to follow in order to start the exercise

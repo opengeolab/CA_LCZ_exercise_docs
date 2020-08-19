@@ -1,7 +1,7 @@
 
 .. _cop_climate:
 
-Copernicus Climate Change Service (C3S)
+Copernicus Climate Change Service
 ============================================
 
 * this contains instructions to follow in order to start the exercise

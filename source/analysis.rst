@@ -1,7 +1,7 @@
 
 .. _analysis:
 
-Data Analysis
+Data Analysis with QGIS
 =============================
 
 * this contains instructions to follow in order to start the exercise
