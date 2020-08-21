@@ -14,7 +14,7 @@ Local Climate Zones (LCZ) is a particular land-use classification framework to d
 
 .. note::
 
-   In the hands-on exercise, you will use an already available LCZ map of Milan (Italy). The analytical procedure to derive LCZ maps out of optical satellite imagery is out of scope for this tutorial.
+   In the hands-on exercise, you will use an already available LCZ map of Milan. The analytical procedure to derive LCZ maps from optical satellite imagery is out of scope for this tutorial.
 
 
 .. Case study: Milan

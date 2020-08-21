@@ -46,7 +46,7 @@ The CDS provides:
 
 .. note::
 
-   In the hands-on exercise, you will download air temperature data from the CDS for the city of Milan and you will learn how to manipulate them with QGIS.
+   In the hands-on exercise, you will download air temperature data from the CDS for the city of Milan and you will learn how to manipulate them in QGIS.
 
 ..  [1] *Thépaut, J. N., Dee, D., Engelen, R., & Pinty, B. (2018). The Copernicus Programme and its Climate Change Service. In: IEEE International Geoscience and Remote Sensing Symposium 2018, 1591-1593.*
           

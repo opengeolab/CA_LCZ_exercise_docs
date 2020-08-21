@@ -8,9 +8,9 @@ Hands-on exercise: LCZ and air tempertature analysis with QGIS
 
 This tutorial will focus on the use of `Copernicus <https://www.copernicus.eu/en>`_ data for assessing local differences in air temperature according to land-use features within highly urbanized cities. 
 
-Through a computer exercise, you will analyse the case of Milan (Italy) using air temperature data from the `Copernicus Climate Change Service (C3S) <https://climate.copernicus.eu>`_ and the `Local Climate Zones (LCZ) <http://www.wudapt.org>`_ map of the city, derived from `Sentinel-2 <https://sentinel.esa.int/web/sentinel/missions/sentinel-2>`_ imagery.
+Through a computer exercise, you will analyse the case of `Milan <https://en.wikipedia.org/wiki/Milan>`_ (Italy) using air temperature data from the `Copernicus Climate Change Service (C3S) <https://climate.copernicus.eu>`_ and the `Local Climate Zones (LCZ) <http://www.wudapt.org>`_ map of the city, derived from `Sentinel-2 <https://sentinel.esa.int/web/sentinel/missions/sentinel-2>`_ imagery.
 
-You will learn how to access and download `C3S data <https://cds.climate.copernicus.eu/#!/home>`_ and how to process them in `QGIS <https://qgis.org/en/site/forusers/download.html>`_ |qgisicon| to obtain a quantitative insight into the LCZ influence on air temperature. The question you are going to answer with this exercise is *"Do the "*
+You will learn how to access and download `C3S data <https://cds.climate.copernicus.eu/#!/home>`_ and how to process them in `QGIS <https://qgis.org/en/site/forusers/download.html>`_ |qgisicon| to obtain a quantitative insight into the LCZ influence on air temperature. The question you are going to answer with this exercise is *"Can we observe and quantify differences in the average air temperature within different LCZ of a city?"*
 
 .. |qgisicon| image:: images/qgis_icon.png
    :scale: 8% 
@@ -22,7 +22,7 @@ You will learn how to access and download `C3S data <https://cds.climate.coperni
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Table of Contents
 
    cop_climate
