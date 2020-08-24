@@ -45,7 +45,7 @@ The LCZ raster map of Milan you will use in the exercise has been derived by [4]
 +------------------+---------------------------------------------------------------+
 
 
-The LCZ map of Milan (*s2_lcz_milan.tif*) (*reference system: WGS84/UTM32N | EPSG:32632*) in *GeoTIFF* format toghether with its predfined QGIS style file (*s2_lcz_milan.qml*) can be download `here <https://github.com/danioxoli/CA_LCZ_exercise_docs/raw/master/source/files/lcz.zip>`_.
+The LCZ map of Milan (*s2_lcz_milan.tif*) (*reference system: WGS84/UTM32N | EPSG:32632*) in *GeoTIFF* format toghether with its predfined QGIS style file (*s2_lcz_milan.qml*) `can be download here <https://github.com/danioxoli/CA_LCZ_exercise_docs/raw/master/source/files/lcz.zip>`_.
 
 .. tip::
 
