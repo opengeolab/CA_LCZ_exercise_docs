@@ -29,7 +29,6 @@ You will learn how to access and download `C3S data <https://cds.climate.coperni
    lcz
    analysis
  
-   
 
 .. Path:
 
@@ -50,4 +49,10 @@ You will learn how to access and download `C3S data <https://cds.climate.coperni
 .. git add .
 .. git commit -m"commit comment"
 .. git push origin master
+
+.. External links to new panel:
+
+.. add to build/_static/js/theme.js on the same row: $(document).ready(function () {$('a[href^="http://"], a[href^="https://"]').not('a[class*=internal]').attr('target', '_blank');});
+
+ 
 

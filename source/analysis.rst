@@ -6,7 +6,7 @@ Hands-on Exercise with QGIS
 
 Now that you are aware of all the necessay backround information, it is time to do work with the Milan case study. To asses differences in the average air temperature within different LCZ, you will perform the following steps:
 
- * download in your home folder the raw air temperature data from the `C3S CDS <https://cds.climate.copernicus.eu/#!/home>`_ in `netCDF <https://www.ogc.org/standards/netcdf>`_ format) and the LCZ map for Milan.
+ * download in your home folder the raw air temperature data from the `C3S CDS <https://cds.climate.copernicus.eu/#!/home>`_ in `netCDF <https://www.ogc.org/standards/netcdf>`_ format and the LCZ map for Milan.
  * open and manipulate the netCDF in QGIS to obtain an analysis-ready raster layer containg the average air temperature for a given time period.
  * open the LCZ map in QGIS and perform raster layer zonal statistics to compute the average air temperature within each LCZ class
  * plot and compare the averages using statistical graphs 
@@ -22,7 +22,7 @@ Data specification and software tools that you will use for the analysis are rep
 LCZ map
 +++++++++++++++++++++++
 
-The LCZ raster map of Milan you will use in the exercise has been derived by [4]_ from a Sentinel-2 image acquired in summer 2016. The map includes the subset of LCZ characterizing the Milan area. Some of the contiguous classes have been aggregated (as shown in the table below) with the purpose of obtaining zones with marked differences in the urban land-use features thus easing their comparison in terms of air temperature. As argued in [4]_, contiguous LCZ classes may be more easily confused during the classification procedure and differences in their contributions to air temperature may be to low to be observed.   
+The LCZ raster map of Milan you will use in the exercise has been derived by [4]_ from a Sentinel-2 image acquired in summer 2016. The map includes the subset of LCZ characterizing the Milan area. Some of the contiguous classes have been aggregated (as shown in the table below) with the purpose of obtaining zones with marked differences in the urban land-use features thus easing their comparison in terms of air temperature. In practice, contiguous LCZ classes may be more easily confused during the classification procedure and, in turn, differences in their contributions to air temperature may be biased or difficult to distinguish.  
 
 .. figure:: /images/lcz_map.png
    :alt: text 
@@ -45,7 +45,7 @@ The LCZ raster map of Milan you will use in the exercise has been derived by [4]
 +------------------+---------------------------------------------------------------+
 
 
-The LCZ map of Milan (*s2_lcz_milan.tif*) toghether with its predfined QGIS style file (*s2_lcz_milan.qml*) can be download `here <https://github.com/danioxoli/CA_LCZ_exercise_docs/raw/master/source/files/lcz.zip>`_.
+The LCZ map of Milan (*s2_lcz_milan.tif*) (*reference system: WGS84/UTM32N | EPSG:32632*) in *GeoTIFF* format toghether with its predfined QGIS style file (*s2_lcz_milan.qml*) can be download `here <https://github.com/danioxoli/CA_LCZ_exercise_docs/raw/master/source/files/lcz.zip>`_.
 
 .. tip::
 
@@ -54,7 +54,7 @@ The LCZ map of Milan (*s2_lcz_milan.tif*) toghether with its predfined QGIS styl
 Air temperature data
 +++++++++++++++++++++++
 
-Air temperature data at a city level are included in the `Climate variables for cities in Europe from 2008 to 2017 <https://cds.climate.copernicus.eu/cdsapp#!/dataset/sis-urban-climate-cities?tab=overview>`_ of the C3S CDS, which contains air temperature, specific humidity, relative humidity and wind speed for 100 European cities for the current climate. The variables are provided as netCDF files with an hourly temporal resolution on a 100m x 100 m spatial grid (CRS: ETRS89/LAEA Europe | EPSG: 3035). 
+Air temperature data at a city level are included in the `Climate variables for cities in Europe from 2008 to 2017 <https://cds.climate.copernicus.eu/cdsapp#!/dataset/sis-urban-climate-cities?tab=overview>`_ of the C3S CDS, which contains air temperature, specific humidity, relative humidity and wind speed for 100 European cities for the current climate. The variables are provided as netCDF files with an hourly temporal resolution on a 100m x 100 m spatial grid (*reference system: ETRS89/LAEA Europe | EPSG: 3035*). 
 
 .. figure:: /images/cds_city_data.png
    :alt: text 
@@ -62,7 +62,7 @@ Air temperature data at a city level are included in the `Climate variables for 
 
    Climate variables for cities in Europe from 2008 to 2017 (https://cds.climate.copernicus.eu/cdsapp#!/dataset/sis-urban-climate-cities) 
 
-After `register and login <https://cds.climate.copernicus.eu/user/register>`_ to the C3S CDS web portal, data can be download for a single city by specifying the variables of interest together with a time period (year and month). The selected data can be then downloaded as a *.zip* or *.tar* file. For this exercise you have to specify the following options for the download:
+After `register and login <https://cds.climate.copernicus.eu/user/register>`_ to the C3S CDS web portal, you have to download Milan data by specifying the variable of interest together with a time period (year and month). The selected data can be then downloaded as a *.zip* or *.tar* file. For this exercise you have to specify the following options before the download:
 
  * Variable = *Air temperature*
  * City = *Milan*
@@ -75,7 +75,7 @@ After `register and login <https://cds.climate.copernicus.eu/user/register>`_ to
    :alt: text 
    :scale: 50%
 
-   Data download panel
+   C3S CDS download page
 
 The netCDF file is structured as a multidimensional spatial grid where each layer includes air temperature observations over Milan area at each time step (hour) in July 2016. 
 
@@ -87,20 +87,90 @@ The netCDF file is structured as a multidimensional spatial grid where each laye
 
 .. note::
 
-   The name of the original downloaded file should be "*tas_Milan_UrbClim_2016_07_v1.0.nc*"
+   The original name of the downloaded file should be "*tas_Milan_UrbClim_2016_07_v1.0.nc*"
 
 
 Software tools
 +++++++++++++++++++++++
 
+To perform the exercise you will use QGIS |qgisicon|. However, advance raster processing functionalities are not directly available within the QGIS core algorithms. To that end, you will use third-party algorithms from `GRASS GIS <https://grass.osgeo.org>`_ |grassicon| which are integrated into the `QGIS Processing Toolbox <https://docs.qgis.org/3.10/en/docs/user_manual/processing/intro.html>`_ |processicon| and they can be run directly from the QGIS interface. 
+
+.. tip:: **GRASS GIS Loading**
+
+   If you don't see GRASS in the **Processing Toolbox**, verify in: **Settings --> Options --> Processing --> Providers** if GRASS provider is activated. GRASS system paths should be already set up if using macOS or Windows.
+
+.. |qgisicon| image:: images/qgis_icon.png
+   :scale: 8% 
+
+.. |grassicon| image:: images/grass_icon.png
+   :scale: 8% 
+
+.. |processicon| image:: images/processing_icon.png
+   :scale: 100% 
 
 Data Processing
 ------------------------------------
 
+netCDF manipulation
++++++++++++++++++++++++
+
+.. warning::
+
+   QGIS does not fully support operations on the netCDF file. The operations you will perform in the next steps represents a workaround to obtain an analysis-ready raster file to be used in this exercise. For applications different from this exercise, there is no warranty that this workaround can be employed.  
+
+
+* Open a new QGIS project and import as a raster layer (**Layer --> Add Layer --> Add Raster Layer**) the air temperature netCDF (*tas_Milan_UrbClim_2016_07_v1.0.nc*). The layer is imported as a multiband raster in which each band contains the hourly observation of air temperature over Milan (n. of bands = 744). In the following steps, you will manipulate the raster file obtained from the netCDF by projecting it to *WGS84/UTM32N | EPSG:32632* and computing the averages of all bands. 
+
+* Do **Right Click** on the layer name in the **QGIS Layer Panel** and then: **Export --> Save As...** to save the layer in *GeoTIFF* format by assigning its native reference system (*ETRS89/LAEA Europe | EPSG: 3035*). 
+
+.. image:: /images/netcdf_processing.png
+   :alt: text 
+   :scale: 80%
+
+
+* Accept the default coordinates conversion procedure suggested by QGIS by clicking **Ok**.
+
+.. image:: /images/proj_warning.png
+   :alt: text 
+   :scale: 80% 
+
+
+* Create a second copy of the obtained raster layer and assign the same projected reference system of the LCZ map (*WGS84/UTM32N | EPSG:32632*) by following the same procedure explained above.
+
+.. image:: /images/netcdf_processing_2.png
+   :alt: text 
+   :scale: 80% 
+
+.. tip:: 
+
+   In case of issues with the presented procedure, you can download the output raster layer from the above steps from here
+
+Now, you have obtained a multiband raster layer projected to the same reference system of the LCZ map. The last step consists of computing the average air temperature on July 16 at each pixel of the grid.
+
+* From the QGIS menu, open: **Processing --> Toolbox** and search for the GRASS GIS algorithm `r.series <https://grass.osgeo.org/grass78/manuals/r.series.html>`_ which allows making each output cell value a function (e.g. the average) of the values assigned to the corresponding cells in the input list of raster bands or layers.
+
+
+* Run the algorithm on the projected multiband raster layer by specifying **Average** in the **Aggregate operation** tab to obtain the single-band raster of the average air temperature [K] for Milan in July 2016. 
+
+.. tip:: 
+
+   Name the output file as "*air_t_milan_average*" because the period "." of the original name of the netCDF file is not accepted by GRASS GIS as part of the output file name.
+
+.. image:: /images/netcdf_processing_3.png
+   :alt: text 
+   :scale: 80% 
+
+.. figure:: /images/air_t.png
+   :alt: text 
+   :scale: 100% 
+
+   *Single band raster of the average air temperature [K] for Milan in July 2016*
+
+Raster zonal statistics
++++++++++++++++++++++++
 
 Results
 ------------------------------------
-
 
 
 
