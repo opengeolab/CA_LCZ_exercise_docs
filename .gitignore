@@ -3,6 +3,6 @@
 .DS_Store
 make.bat
 .index.rst.swp
-build/
+
 source/_templates/
 Makefile

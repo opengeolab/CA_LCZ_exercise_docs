@@ -1,0 +1,384 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hands-on Exercise with QGIS &mdash; LCZ and air tempertature analysis with QGIS 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Local Climate Zones" href="lcz.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> LCZ and air tempertature analysis with QGIS
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="cop_climate.html">Copernicus Climate Change Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcz.html">Local Climate Zones</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Hands-on Exercise with QGIS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#materials">Materials</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lcz-map">LCZ map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#air-temperature-data">Air temperature data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#software-tools">Software tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#data-processing">Data Processing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#netcdf-preprocessing">netCDF preprocessing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#raster-zonal-statistics">Raster zonal statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#results">Results</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">LCZ and air tempertature analysis with QGIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Hands-on Exercise with QGIS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/analysis.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hands-on-exercise-with-qgis">
+<span id="analysis"></span><h1>Hands-on Exercise with QGIS<a class="headerlink" href="#hands-on-exercise-with-qgis" title="Permalink to this headline">¶</a></h1>
+<p>Now that you are aware of all the necessay backround information, it is time to do work with the Milan case study. To asses differences in the average air temperature within different LCZ, you will perform the following steps:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>download in your home folder the raw air temperature data from the <a class="reference external" href="https://cds.climate.copernicus.eu/#!/home">C3S CDS</a> in <a class="reference external" href="https://www.ogc.org/standards/netcdf">netCDF</a> format and the LCZ map for Milan.</p></li>
+<li><p>open and manipulate the netCDF in QGIS to obtain an analysis-ready raster layer containg the average air temperature for a given time period.</p></li>
+<li><p>open the LCZ map in QGIS and perform raster layer zonal statistics to compute the average air temperature within each LCZ class</p></li>
+<li><p>plot and compare the averages using statistical graphs</p></li>
+</ul>
+</div></blockquote>
+<div class="section" id="materials">
+<h2>Materials<a class="headerlink" href="#materials" title="Permalink to this headline">¶</a></h2>
+<p>Data specification and software tools that you will use for the analysis are reported below.</p>
+<div class="section" id="lcz-map">
+<h3>LCZ map<a class="headerlink" href="#lcz-map" title="Permalink to this headline">¶</a></h3>
+<p>The LCZ raster map of Milan you will use in the exercise has been derived by <a class="footnote-reference brackets" href="#id2" id="id1">4</a> from a Sentinel-2 image acquired in summer 2016. The map includes the subset of LCZ characterizing the Milan area. Some of the contiguous classes have been aggregated (as shown in the table below) with the purpose of obtaining zones with marked differences in the urban land-use features thus easing their comparison in terms of air temperature. In practice, contiguous LCZ classes may be more easily confused during the classification procedure and, in turn, differences in their contributions to air temperature may be biased or difficult to distinguish.</p>
+<div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="_images/lcz_map.png"><img alt="text" src="_images/lcz_map.png" style="width: 442.0px; height: 433.0px;" /></a>
+<p class="caption"><span class="caption-text">LCZ map of Milan</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Raster Value</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Compact midrise</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Compact low-rise, Open midrise, Open low-rise, Large low-rise</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Scattered trees</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Low plants</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Water</p></td>
+</tr>
+</tbody>
+</table>
+<p>The LCZ map of Milan (<em>s2_lcz_milan.tif</em>) (<em>reference system: WGS84/UTM32N | EPSG:32632</em>) in <em>GeoTIFF</em> format toghether with its predfined QGIS style file (<em>s2_lcz_milan.qml</em>) can be download <a class="reference external" href="https://github.com/danioxoli/CA_LCZ_exercise_docs/raw/master/source/files/lcz.zip">here</a>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Keep in the same folder both the raster map and its predefined QGIS style file to allow QGIS to automatically style the map when imported in a project.</p>
+</div>
+</div>
+<div class="section" id="air-temperature-data">
+<h3>Air temperature data<a class="headerlink" href="#air-temperature-data" title="Permalink to this headline">¶</a></h3>
+<p>Air temperature data at a city level are included in the <a class="reference external" href="https://cds.climate.copernicus.eu/cdsapp#!/dataset/sis-urban-climate-cities?tab=overview">Climate variables for cities in Europe from 2008 to 2017</a> of the C3S CDS, which contains air temperature, specific humidity, relative humidity and wind speed for 100 European cities for the current climate. The variables are provided as netCDF files with an hourly temporal resolution on a 100m x 100 m spatial grid (<em>reference system: ETRS89/LAEA Europe | EPSG: 3035</em>).</p>
+<div class="figure align-default" id="id4">
+<a class="reference internal image-reference" href="_images/cds_city_data.png"><img alt="text" src="_images/cds_city_data.png" style="width: 790.5px; height: 331.5px;" /></a>
+<p class="caption"><span class="caption-text">Climate variables for cities in Europe from 2008 to 2017 (<a class="reference external" href="https://cds.climate.copernicus.eu/cdsapp#!/dataset/sis-urban-climate-cities">https://cds.climate.copernicus.eu/cdsapp#!/dataset/sis-urban-climate-cities</a>)</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>After <a class="reference external" href="https://cds.climate.copernicus.eu/user/register">register and login</a> to the C3S CDS web portal, you have to download Milan data by specifying the variable of interest together with a time period (year and month). The selected data can be then downloaded as a <em>.zip</em> or <em>.tar</em> file. For this exercise you have to specify the following options before the download:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Variable = <em>Air temperature</em></p></li>
+<li><p>City = <em>Milan</em></p></li>
+<li><p>Year = <em>2016</em></p></li>
+<li><p>Month = <em>July</em></p></li>
+<li><p>Format = <em>Zip file (.zip)</em></p></li>
+</ul>
+</div></blockquote>
+<div class="figure align-default" id="id5">
+<a class="reference internal image-reference" href="_images/nc_milan_download.png"><img alt="text" src="_images/nc_milan_download.png" style="width: 785.5px; height: 350.5px;" /></a>
+<p class="caption"><span class="caption-text">C3S CDS download page</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>The netCDF file is structured as a multidimensional spatial grid where each layer includes air temperature observations over Milan area at each time step (hour) in July 2016.</p>
+<div class="figure align-default" id="id6">
+<a class="reference internal image-reference" href="_images/netcdf.png"><img alt="text" src="_images/netcdf.png" style="width: 359.0px; height: 317.0px;" /></a>
+<p class="caption"><span class="caption-text">Schematic of the netCDF structure</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The original name of the downloaded file should be “<em>tas_Milan_UrbClim_2016_07_v1.0.nc</em>”</p>
+</div>
+</div>
+<div class="section" id="software-tools">
+<h3>Software tools<a class="headerlink" href="#software-tools" title="Permalink to this headline">¶</a></h3>
+<p>To perform the exercise you will use <a class="reference external" href="https://qgis.org/en/site/forusers/download.html">QGIS</a> <a class="reference internal" href="_images/qgis_icon.png"><img alt="qgisicon" src="_images/qgis_icon.png" style="width: 26.240000000000002px; height: 25.2px;" /></a>. However, advance raster processing functionalities are not directly available within the QGIS core algorithms. To that end, you will use third-party algorithms from <a class="reference external" href="https://grass.osgeo.org">GRASS GIS</a> <a class="reference internal" href="_images/grass_icon.png"><img alt="grassicon" src="_images/grass_icon.png" style="width: 28.400000000000002px; height: 32.32px;" /></a> which are integrated into the <a class="reference external" href="https://docs.qgis.org/3.10/en/docs/user_manual/processing/intro.html">QGIS Processing Toolbox</a> <a class="reference internal" href="_images/processing_icon.png"><img alt="processicon" src="_images/processing_icon.png" style="width: 34.0px; height: 35.0px;" /></a> and they can be run directly from the QGIS interface.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>GRASS GIS Loading</strong></p>
+<p>If you don’t see GRASS in the <strong>Processing Toolbox</strong>, verify in: <strong>Settings –&gt; Options –&gt; Processing –&gt; Providers</strong> if GRASS provider is activated. GRASS system paths should be already set up if using macOS or Windows.</p>
+</div>
+</div>
+</div>
+<div class="section" id="data-processing">
+<h2>Data Processing<a class="headerlink" href="#data-processing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="netcdf-preprocessing">
+<h3>netCDF preprocessing<a class="headerlink" href="#netcdf-preprocessing" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>QGIS does not fully support operations on the netCDF file. The operations you will perform in the next steps represents a workaround to obtain an analysis-ready raster file to be used in this exercise. For applications different from this exercise, there is no warranty that this workaround can be employed.</p>
+</div>
+<ul class="simple">
+<li><p>Open a new QGIS project and import as a raster layer (<strong>Layer –&gt; Add Layer –&gt; Add Raster Layer</strong>) the air temperature netCDF (<em>tas_Milan_UrbClim_2016_07_v1.0.nc</em>). The layer is imported as a multiband raster in which each band contains the hourly observation of air temperature over Milan (n. of bands = 744). In the following steps, you will manipulate the raster file obtained from the netCDF by projecting it to <em>WGS84/UTM32N | EPSG:32632</em> and computing the averages of all bands.</p></li>
+<li><p>Do <strong>Right Click</strong> on the layer name in the <strong>QGIS Layer Panel</strong> and then: <strong>Export –&gt; Save As…</strong> to save the layer in <em>GeoTIFF</em> format by assigning its native reference system (<em>ETRS89/LAEA Europe | EPSG: 3035</em>).</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/netcdf_processing.png"><img alt="text" src="_images/netcdf_processing.png" style="width: 768.0px; height: 374.40000000000003px;" /></a>
+<ul class="simple">
+<li><p>Accept the default coordinates conversion procedure suggested by QGIS by clicking <strong>Ok</strong>.</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/proj_warning.png"><img alt="text" src="_images/proj_warning.png" style="width: 567.2px; height: 385.6px;" /></a>
+<ul class="simple">
+<li><p>Create a second copy of the obtained raster layer and assign the same projected reference system of the LCZ map (<em>WGS84/UTM32N | EPSG:32632</em>) by following the same procedure explained above.</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/netcdf_processing_2.png"><img alt="text" src="_images/netcdf_processing_2.png" style="width: 768.0px; height: 374.40000000000003px;" /></a>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In case of issues with the presented procedure, you can directly <a class="reference external" href="https://github.com/danioxoli/CA_LCZ_exercise_docs/raw/master/source/files/tas_Milan_UrbClim_2016_07_v1.0_raster_UTM.zip">download the output raster layer from the above steps</a>.</p>
+</div>
+<p>Now, you have obtained a multiband raster layer projected to the same reference system of the LCZ map. The last step consists of computing the average air temperature on July 16 at each pixel of the grid.</p>
+<ul class="simple">
+<li><p>From the QGIS menu, open: <strong>Processing –&gt; Toolbox</strong> and search for the GRASS GIS algorithm <a class="reference external" href="https://grass.osgeo.org/grass78/manuals/r.series.html">r.series</a> which allows making each output cell value a function (e.g. the average) of the values assigned to the corresponding cells in the input list of raster bands or layers.</p></li>
+<li><p>Run the algorithm on the projected multiband raster layer by specifying <strong>Average</strong> in the <strong>Aggregate operation</strong> tab to obtain the single-band raster of the average air temperature [K] for Milan in July 2016.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Name the output file as “<em>air_t_milan_average</em>” because the period “.” of the original name of the netCDF file is not accepted by GRASS GIS as part of the output file name.</p>
+</div>
+<a class="reference internal image-reference" href="_images/netcdf_processing_3.png"><img alt="text" src="_images/netcdf_processing_3.png" style="width: 768.0px; height: 374.40000000000003px;" /></a>
+<div class="figure align-default" id="id7">
+<a class="reference internal image-reference" href="_images/air_t.png"><img alt="text" src="_images/air_t.png" style="width: 336.0px; height: 341.0px;" /></a>
+<p class="caption"><span class="caption-text"><em>Single band raster of the average air temperature [K] for Milan in July 2016</em></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="raster-zonal-statistics">
+<h3>Raster zonal statistics<a class="headerlink" href="#raster-zonal-statistics" title="Permalink to this headline">¶</a></h3>
+<p>To assess differences in the average air temperature within different LCZ, you need to compute raster statistics by class using the single band raster of the average air temperature for Milan in July 2016 and the LCZ map.</p>
+<ul class="simple">
+<li><p>Open a new QGIS project and import the requested raster maps (<em>air_t_milan_average.tif</em> and <em>s2_lcz_milan.tif</em>).</p></li>
+<li><p>From the QGIS menu, open: <strong>Processing –&gt; Toolbox</strong> and search for the QGIS algorithm <a class="reference external" href="https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#raster-layer-zonal-statistics">Raster layer zonal statistics</a> which allows computing statistics for a raster layer’s values, categorized by zones defined in another raster layer. Specify as <strong>Input layer</strong> the average air temperature raster and as <strong>Zones layer</strong> the LCZ map. Save the output as a <em>Shapefile</em> or <em>GeoPackage</em> table.</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/zonal_stat.png"><img alt="text" src="_images/zonal_stat.png" style="width: 768.0px; height: 376.0px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The output file contains the summary statistics by LCZ class computed for the average air temperature raster. No geometries are included in the output.”</p>
+</div>
+<ul class="simple">
+<li><p>Open, explore and comment the output table by focusing on the columns <em>zone</em> (i.e. LCZ class) and <em>mean</em> (i.e. average air temperature).</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/tab_view.png"><img alt="text" src="_images/tab_view.png" style="width: 768.0px; height: 374.40000000000003px;" /></a>
+</div>
+</div>
+<div class="section" id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+<p>It is possible now to plot the resulting table using e.g. the <a class="reference external" href="https://plugins.qgis.org/plugins/DataPlotly/">Data Plotly</a> <a class="reference internal" href="_images/data_ploty.png"><img alt="dataploty" src="_images/data_ploty.png" style="width: 24.0px; height: 24.0px;" /></a> QGIS plugin. From the QGIS menu, open: <strong>Plugin –&gt; Manage and Install Plugins</strong>, search for Data Plotly plugin and install it.</p>
+<p>The difference of average air temperature in each LCZ class can be appreciated e.g. by plotting te columns <em>zone</em> (X-axis) and <em>mean</em> (Y-axis) using a Scatter Plot.</p>
+<div class="figure align-default" id="id8">
+<a class="reference internal image-reference" href="_images/final_plot.png"><img alt="text" src="_images/final_plot.png" style="width: 494.40000000000003px; height: 420.8px;" /></a>
+<p class="caption"><span class="caption-text"><em>Results visualization by means of a Scatter Plot</em></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition-can-we-observe-and-quantify-differences-in-the-average-air-temperature-within-different-lcz-of-a-city admonition">
+<p class="admonition-title"><strong>Can we observe and quantify differences in the average air temperature within different LCZ of a city?</strong></p>
+<p>The answer is “Yes, we can measure the differences which can be quantified around 2 Kelvin degrees between heavily urbanized areas (1 = Compact midrise) and vegetated areas (4 = Low plants) for this specific case study”</p>
+</div>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">4</a></span></dt>
+<dd><p><em>Oxoli, D., Ronchetti, G., Minghini, M., Molinari, M. E., Lotfian, M., Sona, G., &amp; Brovelli, M. A. (2018). Measuring urban land cover influence on air temperature through multiple geo-data—The case of Milan, Italy. ISPRS International Journal of Geo-Information, 7(11), 421.</em></p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="lcz.html" class="btn btn-neutral float-left" title="Local Climate Zones" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Daniele Oxoli
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

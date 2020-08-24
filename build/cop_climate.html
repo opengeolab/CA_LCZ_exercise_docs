@@ -1,0 +1,242 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Copernicus Climate Change Service &mdash; LCZ and air tempertature analysis with QGIS 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Local Climate Zones" href="lcz.html" />
+    <link rel="prev" title="Hands-on exercise: LCZ and air tempertature analysis with QGIS" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> LCZ and air tempertature analysis with QGIS
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Copernicus Climate Change Service</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#climate-data-store">Climate Data Store</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lcz.html">Local Climate Zones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis.html">Hands-on Exercise with QGIS</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">LCZ and air tempertature analysis with QGIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Copernicus Climate Change Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/cop_climate.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="copernicus-climate-change-service">
+<span id="cs3"></span><h1>Copernicus Climate Change Service<a class="headerlink" href="#copernicus-climate-change-service" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference external" href="https://climate.copernicus.eu">Copernicus Climate Change Service (C3S)</a> <em>“has been designed to respond to environmental and societal challenges associated with climate change”</em>.</p>
+<p>The C3S aims at combining expertise from across Europe by providing key indicators on climate change drivers and impacts to support the <a class="reference external" href="https://ec.europa.eu/clima/policies/eu-climate-action_en">European climate change policy</a>. The C3S leverages a systematical use of in-situ and satellite-based observations, combined with climate models, to generate these indicators. The C3S web portal further open access to climate datasets, information and news <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
+<div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="_images/c3s.png"><img alt="text" src="_images/c3s.png" style="width: 512.0px; height: 282.40000000000003px;" /></a>
+<p class="caption"><span class="caption-text">C3S web portal <em>(https://climate.copernicus.eu)</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="climate-data-store">
+<span id="csd"></span><h2>Climate Data Store<a class="headerlink" href="#climate-data-store" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://cds.climate.copernicus.eu/#!/home">Climate Data Store (CDS)</a> is one of the component of the C3S web portal and provide access to the geophysical information needed to analyse the Climate Change Indicators in a consistent, scientific manner. Users can <a class="reference external" href="https://cds.climate.copernicus.eu/user/register">register for free</a> to obtain access to the CDS and its Toolbox.</p>
+<p>The CDS provides:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>estimates of essential climate variables, climate indicators, and relevant information</p></li>
+<li><p>near-real time climate monitoring facility</p></li>
+<li><p>access to multi-model seasonal forecasts</p></li>
+<li><p>climate projections at global and regional scales</p></li>
+<li><p>access to research computing facilities</p></li>
+<li><p>data processing and visualisation tools</p></li>
+</ul>
+</div></blockquote>
+<div class="figure align-default" id="id4">
+<a class="reference internal image-reference" href="_images/cds.png"><img alt="text" src="_images/cds.png" style="width: 516.5px; height: 348.0px;" /></a>
+<p class="caption"><span class="caption-text">C3S Climate Data Store <em>(https://cds.climate.copernicus.eu/#!/home)</em></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the hands-on exercise, you will download air temperature data from the CDS for the city of Milan and you will learn how to manipulate them in QGIS.</p>
+</div>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><em>Thépaut, J. N., Dee, D., Engelen, R., &amp; Pinty, B. (2018). The Copernicus Programme and its Climate Change Service. In: IEEE International Geoscience and Remote Sensing Symposium 2018, 1591-1593.</em></p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="lcz.html" class="btn btn-neutral float-right" title="Local Climate Zones" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Hands-on exercise: LCZ and air tempertature analysis with QGIS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Daniele Oxoli
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
