@@ -93,7 +93,7 @@ The netCDF file is structured as a multidimensional spatial grid where each laye
 Software tools
 +++++++++++++++++++++++
 
-To perform the exercise you will use QGIS |qgisicon|. However, advance raster processing functionalities are not directly available within the QGIS core algorithms. To that end, you will use third-party algorithms from `GRASS GIS <https://grass.osgeo.org>`_ |grassicon| which are integrated into the `QGIS Processing Toolbox <https://docs.qgis.org/3.10/en/docs/user_manual/processing/intro.html>`_ |processicon| and they can be run directly from the QGIS interface. 
+To perform the exercise you will use `QGIS <https://qgis.org/en/site/forusers/download.html>`_ |qgisicon|. However, advance raster processing functionalities are not directly available within the QGIS core algorithms. To that end, you will use third-party algorithms from `GRASS GIS <https://grass.osgeo.org>`_ |grassicon| which are integrated into the `QGIS Processing Toolbox <https://docs.qgis.org/3.10/en/docs/user_manual/processing/intro.html>`_ |processicon| and they can be run directly from the QGIS interface. 
 
 .. tip:: **GRASS GIS Loading**
 
@@ -143,7 +143,7 @@ netCDF manipulation
 
 .. tip:: 
 
-   In case of issues with the presented procedure, you can download the output raster layer from the above steps from here
+   In case of issues with the presented procedure, you can download the output raster layer from the above steps from `here <https://github.com/danioxoli/CA_LCZ_exercise_docs/raw/master/source/files/tas_Milan_UrbClim_2016_07_v1.0_raster_UTM.zip>`_
 
 Now, you have obtained a multiband raster layer projected to the same reference system of the LCZ map. The last step consists of computing the average air temperature on July 16 at each pixel of the grid.
 
