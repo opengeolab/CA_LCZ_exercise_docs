@@ -193,7 +193,7 @@ To assess differences in the average air temperature within different LCZ, you n
 Results
 ------------------------------------
 
-It is possible now to plot the resulting table using e.g. the `Data Plotly <https://plugins.qgis.org/plugins/DataPlotly/>`_ |dataploty| QGIS plugin. From the QGIS menu, open: **Plugin --> Manage and Install Plugins**, search for Data Plotly plugin and install it. 
+It is possible now to plot the resulting table using e.g. the `Data Plotly <https://plugins.qgis.org/plugins/DataPlotly/>`_ |dataploty| QGIS plugin. From the QGIS menu, open: **Plugin --> Manage and Install Plugins**, search for **Data Plotly** plugin and install it. 
 
 .. |dataploty| image:: images/data_ploty.png
    :scale: 100% 
@@ -209,7 +209,7 @@ The difference of average air temperature in each LCZ class can be appreciated e
 
 .. admonition:: **Can we observe and quantify differences in the average air temperature within different LCZ of a city?**
 
-   The answer is "Yes, we can measure the differences which can be quantified around 2 Kelvin degrees between heavily urbanized areas (1 = Compact midrise) and vegetated areas (4 = Low plants) for this specific case study"
+   The answer is "Yes, we can measure these differences that are around 2 Kelvin degrees between heavily urbanized areas (1 = Compact midrise) and vegetated areas (4 = Low plants) for this case study"
 
 
 
