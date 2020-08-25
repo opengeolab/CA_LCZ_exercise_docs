@@ -29,6 +29,8 @@ You will learn how to access and download `C3S data <https://cds.climate.coperni
    lcz
    analysis
  
+.. Env:
+   % . /Users/daniele/opt/anaconda3/bin/activate && conda activate /Users/daniele/opt/anaconda3/envs/sphinx;
 
 .. Path:
 

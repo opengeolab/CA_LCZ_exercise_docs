@@ -198,7 +198,7 @@ It is possible now to plot the resulting table using e.g. the `Data Plotly <http
 .. |dataploty| image:: images/data_ploty.png
    :scale: 100% 
 
-The difference of average air temperature in each LCZ class can be appreciated e.g. by plotting te columns *zone* (X-axis) and *mean* (Y-axis) using a Scatter Plot.
+The difference of average air temperature in each LCZ class can be appreciated e.g. by plotting the columns *zone* (X-axis) and *mean* (Y-axis) using a Scatter Plot.
 
 .. figure:: /images/final_plot.png
    :alt: text 
