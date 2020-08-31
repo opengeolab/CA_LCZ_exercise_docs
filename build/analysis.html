@@ -274,7 +274,7 @@
 </ul>
 <a class="reference internal image-reference" href="_images/proj_warning.png"><img alt="text" src="_images/proj_warning.png" style="width: 567.2px; height: 385.6px;" /></a>
 <ul class="simple">
-<li><p>Create a second copy of the obtained raster layer and assign the same projected reference system of the LCZ map (<em>WGS84/UTM32N | EPSG:32632</em>) by following the same procedure explained above.</p></li>
+<li><p>Create a second copy of the obtained raster layer and assign the same projected reference system of the LCZ map (<em>WGS84/UTM32N | EPSG:32632</em>) by following the procedure explained in the previous step.</p></li>
 </ul>
 <a class="reference internal image-reference" href="_images/netcdf_processing_2.png"><img alt="text" src="_images/netcdf_processing_2.png" style="width: 768.0px; height: 374.40000000000003px;" /></a>
 <div class="admonition tip">
@@ -288,7 +288,11 @@
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Name the output file as “<em>air_t_milan_average</em>” because the period “.” of the original name of the netCDF file is not accepted by GRASS GIS as part of the output file name.</p>
+<p>Name the output file as “<em>air_t_milan_average</em>” because the period “.” of the original name of the netCDF file may not be accepted by GRASS GIS as part of the output file name. In case of issues with the presented procedure, you can directly <a class="reference external" href="https://github.com/danioxoli/CA_LCZ_exercise_docs/raw/master/source/files/air_t_milan_average.zip">download the average air temperature raster layer from the above step</a>.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you use QGIS on Windows, you have to set also the raster values range. In the <em>r.series</em> panel, opend <strong>Advanced Parameters –&gt; Ignore values outside this range (lo,hi)</strong>, set e.g. <strong>Min = -1000</strong> and  <strong>Max = 1000</strong></p>
 </div>
 <a class="reference internal image-reference" href="_images/netcdf_processing_3.png"><img alt="text" src="_images/netcdf_processing_3.png" style="width: 768.0px; height: 374.40000000000003px;" /></a>
 <div class="figure align-default" id="id7">

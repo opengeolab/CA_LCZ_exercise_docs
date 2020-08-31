@@ -29,32 +29,7 @@ You will learn how to access and download `C3S data <https://cds.climate.coperni
    lcz
    analysis
  
-.. Env:
-   % . /Users/daniele/opt/anaconda3/bin/activate && conda activate /Users/daniele/opt/anaconda3/envs/sphinx;
 
-.. Path:
-
-.. cd /Users/daniele/Desktop/copernicus_exercise/CA_LCZ_exercise_docs
-
-.. Build HTML:
-
-.. sphinx-build -b html /Users/daniele/Desktop/copernicus_exercise/CA_LCZ_exercise_docs/source /Users/daniele/Desktop/copernicus_exercise/CA_LCZ_exercise_docs/build
-
-.. Build Latext: 
-
-.. sphinx-build -M latexpdf /Users/daniele/Desktop/copernicus_exercise/CA_LCZ_exercise_docs/source /Users/daniele/Desktop/copernicus_exercise/CA_LCZ_exercise_docs/build
-
-.. Git actions:
-
-.. vim .gitignore
-.. git status
-.. git add .
-.. git commit -m"commit comment"
-.. git push origin master
-
-.. External links to new panel:
-
-.. add to build/_static/js/theme.js on the same row: $(document).ready(function () {$('a[href^="http://"], a[href^="https://"]').not('a[class*=internal]').attr('target', '_blank');});
 
  
 
