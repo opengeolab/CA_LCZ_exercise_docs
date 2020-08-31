@@ -154,7 +154,7 @@ Now, you have obtained a multiband raster layer projected to the same reference 
 
 .. tip:: 
 
-   Name the output file as "*air_t_milan_average*" because the period "." of the original name of the netCDF file is not accepted by GRASS GIS as part of the output file name.
+   Name the output file as "*air_t_milan_average*" because the period "." of the original name of the netCDF file may not be accepted by GRASS GIS as part of the output file name. In case of issues with the presented procedure, you can directly `download the output raster layer from the above step <https://github.com/danioxoli/CA_LCZ_exercise_docs/raw/master/source/files/air_t_milan_average.zip>`_.
 
 .. image:: /images/netcdf_processing_3.png
    :alt: text 
