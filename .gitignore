@@ -7,3 +7,4 @@ build/doctrees
 build/latex
 source/_templates/
 Makefile
+instructions.txt
