@@ -149,16 +149,15 @@ Now, you have obtained a multiband raster layer projected to the same reference 
 
 * From the QGIS menu, open: **Processing --> Toolbox** and search for the GRASS GIS algorithm `r.series <https://grass.osgeo.org/grass78/manuals/r.series.html>`_ which allows making each output cell value a function (e.g. the average) of the values assigned to the corresponding cells in the input list of raster bands or layers.
 
-
 * Run the algorithm on the projected multiband raster layer by specifying **Average** in the **Aggregate operation** tab to obtain the single-band raster of the average air temperature [K] for Milan in July 2016. 
+
+.. warning::
+
+   If you use QGIS on Windows, you have to set also the raster values range. In the *r.series* panel, opend **Advanced Parameters --> Ignore values outside this range (lo,hi)**, set e.g. **Min = -1000** and  **Max = 1000**.
 
 .. tip:: 
 
    Name the output file as "*air_t_milan_average*" because the period "." of the original name of the netCDF file may not be accepted by GRASS GIS as part of the output file name. In case of issues with the presented procedure, you can directly `download the average air temperature raster layer from the above step <https://github.com/danioxoli/CA_LCZ_exercise_docs/raw/master/source/files/air_t_milan_average.zip>`_.
-
-.. warning::
-
-   If you use QGIS on Windows, you have to set also the raster values range. In the *r.series* panel, opend **Advanced Parameters --> Ignore values outside this range (lo,hi)**, set e.g. **Min = -1000** and  **Max = 1000**
 
 
 .. image:: /images/netcdf_processing_3.png

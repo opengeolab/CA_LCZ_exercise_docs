@@ -286,13 +286,13 @@
 <li><p>From the QGIS menu, open: <strong>Processing –&gt; Toolbox</strong> and search for the GRASS GIS algorithm <a class="reference external" href="https://grass.osgeo.org/grass78/manuals/r.series.html">r.series</a> which allows making each output cell value a function (e.g. the average) of the values assigned to the corresponding cells in the input list of raster bands or layers.</p></li>
 <li><p>Run the algorithm on the projected multiband raster layer by specifying <strong>Average</strong> in the <strong>Aggregate operation</strong> tab to obtain the single-band raster of the average air temperature [K] for Milan in July 2016.</p></li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you use QGIS on Windows, you have to set also the raster values range. In the <em>r.series</em> panel, opend <strong>Advanced Parameters –&gt; Ignore values outside this range (lo,hi)</strong>, set e.g. <strong>Min = -1000</strong> and  <strong>Max = 1000</strong>.</p>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Name the output file as “<em>air_t_milan_average</em>” because the period “.” of the original name of the netCDF file may not be accepted by GRASS GIS as part of the output file name. In case of issues with the presented procedure, you can directly <a class="reference external" href="https://github.com/danioxoli/CA_LCZ_exercise_docs/raw/master/source/files/air_t_milan_average.zip">download the average air temperature raster layer from the above step</a>.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If you use QGIS on Windows, you have to set also the raster values range. In the <em>r.series</em> panel, opend <strong>Advanced Parameters –&gt; Ignore values outside this range (lo,hi)</strong>, set e.g. <strong>Min = -1000</strong> and  <strong>Max = 1000</strong></p>
 </div>
 <a class="reference internal image-reference" href="_images/netcdf_processing_3.png"><img alt="text" src="_images/netcdf_processing_3.png" style="width: 768.0px; height: 374.40000000000003px;" /></a>
 <div class="figure align-default" id="id7">
