@@ -6,7 +6,7 @@
 Hands-on exercise: LCZ and air tempertature analysis with QGIS
 ===========================================================================
 
-This tutorial will focus on the use of `Copernicus <https://www.copernicus.eu/en>`_ data for assessing local differences in air temperature according to land-use features within highly urbanized cities. 
+This tutorial will focus on the use of `Copernicus <https://www.copernicus.eu/en>`_ data for assessing local differences in air temperature according to land-use features within highly urbanized areas. 
 
 Through a computer exercise, you will analyse the case of `Milan <https://en.wikipedia.org/wiki/Milan>`_ (Italy) using air temperature data from the `Copernicus Climate Change Service (C3S) <https://climate.copernicus.eu>`_ and the `Local Climate Zones (LCZ) <http://www.wudapt.org>`_ map of the city, derived from `Sentinel-2 <https://sentinel.esa.int/web/sentinel/missions/sentinel-2>`_ imagery.
 

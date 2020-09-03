@@ -27,7 +27,7 @@ The C3S aims at combining expertise from across Europe by providing key indicato
 Climate Data Store
 ------------------------------------
 
-The `Climate Data Store (CDS) <https://cds.climate.copernicus.eu/#!/home>`_ is one of the component of the C3S web portal and provide access to the geophysical information needed to analyse the Climate Change Indicators in a consistent, scientific manner. Users can `register for free <https://cds.climate.copernicus.eu/user/register>`_ to obtain access to the CDS and its Toolbox.
+The `Climate Data Store (CDS) <https://cds.climate.copernicus.eu/#!/home>`_ is one of the component of the C3S web portal and provides access to the geophysical information needed to analyse the Climate Change Indicators in a consistent, scientific manner. Users can `register for free <https://cds.climate.copernicus.eu/user/register>`_ to obtain access to the CDS and its Toolbox.
 
 The CDS provides:
 

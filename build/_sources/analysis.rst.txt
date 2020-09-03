@@ -4,7 +4,7 @@
 Hands-on Exercise with QGIS
 =============================
 
-Now that you are aware of all the necessay backround information, it is time to do work with the Milan case study. To asses differences in the average air temperature within different LCZ, you will perform the following steps:
+Now that you are aware of all the necessay background information, it is time to do work with the Milan case study. To asses differences in the average air temperature within different LCZ, you will perform the following steps:
 
  * download in your home folder the raw air temperature data from the `C3S CDS <https://cds.climate.copernicus.eu/#!/home>`_ in `netCDF <https://www.ogc.org/standards/netcdf>`_ format and the LCZ map for Milan.
  * open and manipulate the netCDF in QGIS to obtain an analysis-ready raster layer containg the average air temperature for a given time period.
@@ -26,7 +26,7 @@ The LCZ raster map of Milan you will use in the exercise has been derived by [4]
 
 .. figure:: /images/lcz_map.png
    :alt: text 
-   :scale: 100%
+   :scale: 70%
 
    LCZ map of Milan
 
@@ -45,7 +45,7 @@ The LCZ raster map of Milan you will use in the exercise has been derived by [4]
 +------------------+---------------------------------------------------------------+
 
 
-The LCZ map of Milan (*s2_lcz_milan.tif*) (*reference system: WGS84/UTM32N | EPSG:32632*) in `GeoTIFF <https://www.ogc.org/standards/geotiff>`_ format toghether with its predfined `QGIS Style File <https://docs.qgis.org/3.10/en/docs/user_manual/appendices/qgis_file_formats.html#qml-the-qgis-style-file-format>`_ (*s2_lcz_milan.qml*) `can be download here <https://github.com/danioxoli/CA_LCZ_exercise_docs/raw/master/source/files/lcz.zip>`_.
+The LCZ map of Milan (*s2_lcz_milan.tif*) (*reference system: WGS84/UTM32N | EPSG:32632*) in `GeoTIFF <https://www.ogc.org/standards/geotiff>`_ format together with its predfined `QGIS Style File <https://docs.qgis.org/3.10/en/docs/user_manual/appendices/qgis_file_formats.html#qml-the-qgis-style-file-format>`_ (*s2_lcz_milan.qml*) `can be download here <https://github.com/danioxoli/CA_LCZ_exercise_docs/raw/master/source/files/lcz.zip>`_.
 
 .. tip::
 
@@ -114,9 +114,7 @@ Data Processing
 netCDF preprocessing
 +++++++++++++++++++++++
 
-.. warning::
-
-   QGIS does not fully support operations on the netCDF file. The operations you will perform in the next steps represents a workaround to obtain an analysis-ready raster file to be used in this exercise. For applications different from this exercise, there is no warranty that this workaround can be employed.  
+..    QGIS does not fully support operations on the netCDF file. The operations you will perform in the next steps represent a workaround to obtain an analysis-ready raster file to be used in this exercise. For applications different from this exercise, there is no warranty that this workaround can be employed.  
 
 
 * Open a new QGIS project and import as a raster layer (**Layer --> Add Layer --> Add Raster Layer**) the air temperature netCDF (*tas_Milan_UrbClim_2016_07_v1.0.nc*). The layer is imported as a multiband raster in which each band contains the hourly observation of air temperature over Milan (n. of bands = 744). In the following steps, you will manipulate the raster file obtained from the netCDF by projecting it to *WGS84/UTM32N | EPSG:32632* and computing the averages of all bands. 
@@ -177,7 +175,7 @@ To assess differences in the average air temperature within different LCZ, you n
 
 * Open a new QGIS project and import the requested raster maps (*air_t_milan_average.tif* and *s2_lcz_milan.tif*).
 
-* From the QGIS menu, open: **Processing --> Toolbox** and search for the QGIS algorithm `Raster layer zonal statistics <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#raster-layer-zonal-statistics>`_ which allows computing statistics for a raster layer’s values, categorized by zones defined in another raster layer. Specify as **Input layer** the average air temperature raster and as **Zones layer** the LCZ map. Save the output as a *Shapefile* or *GeoPackage* table.
+* From the QGIS menu, open: **Processing --> Toolbox** and search for the QGIS algorithm `Raster layer zonal statistics <https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#raster-layer-zonal-statistics>`_ which allows you computing statistics for a raster layer’s values, categorized by zones defined in another raster layer. Specify as **Input layer** the average air temperature raster and as **Zones layer** the LCZ map. Save the output as a *Shapefile* or *GeoPackage* table.
 
 .. image:: /images/zonal_stat.png
    :alt: text 
