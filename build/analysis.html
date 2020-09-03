@@ -274,14 +274,14 @@
 </ul>
 <a class="reference internal image-reference" href="_images/proj_warning.png"><img alt="text" src="_images/proj_warning.png" style="width: 567.2px; height: 385.6px;" /></a>
 <ul class="simple">
-<li><p>Create a second copy of the obtained raster layer and assign the same projected reference system of the LCZ map (<em>WGS84/UTM32N | EPSG:32632</em>) by following the procedure explained in the previous step.</p></li>
+<li><p>Create a second copy of the raster layer to assign the same projected reference system of the LCZ map (<em>WGS84/UTM32N | EPSG:32632</em>) by following the procedure explained in the previous step.</p></li>
 </ul>
 <a class="reference internal image-reference" href="_images/netcdf_processing_2.png"><img alt="text" src="_images/netcdf_processing_2.png" style="width: 768.0px; height: 374.40000000000003px;" /></a>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>In case of issues with the presented procedure, you can directly <a class="reference external" href="https://github.com/danioxoli/CA_LCZ_exercise_docs/raw/master/source/files/tas_Milan_UrbClim_2016_07_v1.0_raster_UTM.zip">download the output raster layer from the above steps</a>.</p>
+<p>In case of issues with the presented procedure, you can directly <a class="reference external" href="https://github.com/danioxoli/CA_LCZ_exercise_docs/raw/master/source/files/tas_Milan_UrbClim_2016_07_v1.0_raster_UTM.zip">download the projected raster layer from the above step</a>.</p>
 </div>
-<p>Now, you have obtained a multiband raster layer projected to the same reference system of the LCZ map. The last step consists of computing the average air temperature on July 16 at each pixel of the grid.</p>
+<p>Now, you have obtained a multiband raster layer projected to the same reference system of the LCZ map. The last step consists of computing the average air temperature in July 2016 at each pixel of the grid.</p>
 <ul class="simple">
 <li><p>From the QGIS menu, open: <strong>Processing –&gt; Toolbox</strong> and search for the GRASS GIS algorithm <a class="reference external" href="https://grass.osgeo.org/grass78/manuals/r.series.html">r.series</a> which allows making each output cell value a function (e.g. the average) of the values assigned to the corresponding cells in the input list of raster bands or layers.</p></li>
 <li><p>Run the algorithm on the projected multiband raster layer by specifying <strong>Average</strong> in the <strong>Aggregate operation</strong> tab to obtain the single-band raster of the average air temperature [K] for Milan in July 2016.</p></li>

@@ -135,7 +135,7 @@ netCDF preprocessing
    :scale: 80% 
 
 
-* Create a second copy of the obtained raster layer and assign the same projected reference system of the LCZ map (*WGS84/UTM32N | EPSG:32632*) by following the procedure explained in the previous step.
+* Create a second copy of the raster layer to assign the same projected reference system of the LCZ map (*WGS84/UTM32N | EPSG:32632*) by following the procedure explained in the previous step.
 
 .. image:: /images/netcdf_processing_2.png
    :alt: text 
@@ -143,9 +143,9 @@ netCDF preprocessing
 
 .. tip:: 
 
-   In case of issues with the presented procedure, you can directly `download the output raster layer from the above steps <https://github.com/danioxoli/CA_LCZ_exercise_docs/raw/master/source/files/tas_Milan_UrbClim_2016_07_v1.0_raster_UTM.zip>`_.
+   In case of issues with the presented procedure, you can directly `download the projected raster layer from the above step <https://github.com/danioxoli/CA_LCZ_exercise_docs/raw/master/source/files/tas_Milan_UrbClim_2016_07_v1.0_raster_UTM.zip>`_.
 
-Now, you have obtained a multiband raster layer projected to the same reference system of the LCZ map. The last step consists of computing the average air temperature on July 16 at each pixel of the grid.
+Now, you have obtained a multiband raster layer projected to the same reference system of the LCZ map. The last step consists of computing the average air temperature in July 2016 at each pixel of the grid.
 
 * From the QGIS menu, open: **Processing --> Toolbox** and search for the GRASS GIS algorithm `r.series <https://grass.osgeo.org/grass78/manuals/r.series.html>`_ which allows making each output cell value a function (e.g. the average) of the values assigned to the corresponding cells in the input list of raster bands or layers.
 
