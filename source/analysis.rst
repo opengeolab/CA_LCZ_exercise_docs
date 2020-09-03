@@ -216,8 +216,9 @@ The difference of average air temperature in each LCZ class can be appreciated e
    The answer is "Yes, we can measure these differences that are around 2 Kelvin degrees between heavily urbanized areas (1 = Compact midrise) and vegetated areas (4 = Low plants) for this case study"
 
 
+..  [4] *Loftian, M. (2016). Urban climate modeling: case study of Milan city. Politecnico di Milano (M.Sc. dissertation).* 
 
-..  [4] *Oxoli, D., Ronchetti, G., Minghini, M., Molinari, M. E., Lotfian, M., Sona, G., & Brovelli, M. A. (2018). Measuring urban land cover influence on air temperature through multiple geo-data—The case of Milan, Italy. ISPRS International Journal of Geo-Information, 7(11), 421.*
+..  [5] *Oxoli, D., Ronchetti, G., Minghini, M., Molinari, M. E., Lotfian, M., Sona, G., & Brovelli, M. A. (2018). Measuring urban land cover influence on air temperature through multiple geo-data—The case of Milan, Italy. ISPRS International Journal of Geo-Information, 7(11), 421.*
 
-..  [5] *Loftian, M. (2016). Urban climate modeling: case study of Milan city. Politecnico di Milano (M.Sc. dissertation).* 
+
 
