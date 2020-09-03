@@ -22,7 +22,7 @@ Data specification and software tools that you will use for the analysis are rep
 LCZ map
 +++++++++++++++++++++++
 
-The LCZ raster map of Milan you will use in the exercise has been derived by [4]_ from a Sentinel-2 image acquired in summer 2016. The map includes the subset of LCZ characterizing the Milan area. Some of the contiguous classes have been aggregated (as shown in the table below) with the purpose of obtaining zones with marked differences in the urban land-use features thus easing their comparison in terms of air temperature. In practice, contiguous LCZ classes may be more easily confused during the classification procedure and, in turn, differences in their contributions to air temperature may be biased or difficult to distinguish.  
+The LCZ raster map of Milan you will use in the exercise has been derived by [4]_ and [5]_ from a Sentinel-2 image acquired in summer 2016. The map includes the subset of LCZ characterizing the Milan area. Some of the contiguous classes have been aggregated (as shown in the table below) with the purpose of obtaining zones with marked differences in the urban land-use features thus easing their comparison in terms of air temperature. In practice, contiguous LCZ classes may be more easily confused during the classification procedure and, in turn, differences in their contributions to air temperature may be biased or difficult to distinguish.  
 
 .. figure:: /images/lcz_map.png
    :alt: text 
@@ -218,4 +218,6 @@ The difference of average air temperature in each LCZ class can be appreciated e
 
 
 ..  [4] *Oxoli, D., Ronchetti, G., Minghini, M., Molinari, M. E., Lotfian, M., Sona, G., & Brovelli, M. A. (2018). Measuring urban land cover influence on air temperature through multiple geo-data—The case of Milan, Italy. ISPRS International Journal of Geo-Information, 7(11), 421.*
+
+..  [5] *Loftian, M. (2016). Urban climate modeling: case study of Milan city. Politecnico di Milano (M.Sc. dissertation).* 
 

@@ -178,10 +178,10 @@
 <p>Data specification and software tools that you will use for the analysis are reported below.</p>
 <div class="section" id="lcz-map">
 <h3>LCZ map<a class="headerlink" href="#lcz-map" title="Permalink to this headline">¶</a></h3>
-<p>The LCZ raster map of Milan you will use in the exercise has been derived by <a class="footnote-reference brackets" href="#id2" id="id1">4</a> from a Sentinel-2 image acquired in summer 2016. The map includes the subset of LCZ characterizing the Milan area. Some of the contiguous classes have been aggregated (as shown in the table below) with the purpose of obtaining zones with marked differences in the urban land-use features thus easing their comparison in terms of air temperature. In practice, contiguous LCZ classes may be more easily confused during the classification procedure and, in turn, differences in their contributions to air temperature may be biased or difficult to distinguish.</p>
-<div class="figure align-default" id="id3">
+<p>The LCZ raster map of Milan you will use in the exercise has been derived by <a class="footnote-reference brackets" href="#id3" id="id1">4</a> and <a class="footnote-reference brackets" href="#id4" id="id2">5</a> from a Sentinel-2 image acquired in summer 2016. The map includes the subset of LCZ characterizing the Milan area. Some of the contiguous classes have been aggregated (as shown in the table below) with the purpose of obtaining zones with marked differences in the urban land-use features thus easing their comparison in terms of air temperature. In practice, contiguous LCZ classes may be more easily confused during the classification procedure and, in turn, differences in their contributions to air temperature may be biased or difficult to distinguish.</p>
+<div class="figure align-default" id="id5">
 <a class="reference internal image-reference" href="_images/lcz_map.png"><img alt="text" src="_images/lcz_map.png" style="width: 442.0px; height: 433.0px;" /></a>
-<p class="caption"><span class="caption-text">LCZ map of Milan</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">LCZ map of Milan</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <table class="docutils align-default">
 <colgroup>
@@ -218,9 +218,9 @@
 <div class="section" id="air-temperature-data">
 <h3>Air temperature data<a class="headerlink" href="#air-temperature-data" title="Permalink to this headline">¶</a></h3>
 <p>Air temperature data at a city level are included in the <a class="reference external" href="https://cds.climate.copernicus.eu/cdsapp#!/dataset/sis-urban-climate-cities?tab=overview">Climate variables for cities in Europe from 2008 to 2017</a> of the C3S CDS, which contains air temperature, specific humidity, relative humidity and wind speed for 100 European cities for the current climate. The variables are provided as netCDF files with an hourly temporal resolution on a 100m x 100 m spatial grid (<em>reference system: ETRS89/LAEA Europe | EPSG: 3035</em>).</p>
-<div class="figure align-default" id="id4">
+<div class="figure align-default" id="id6">
 <a class="reference internal image-reference" href="_images/cds_city_data.png"><img alt="text" src="_images/cds_city_data.png" style="width: 790.5px; height: 331.5px;" /></a>
-<p class="caption"><span class="caption-text">Climate variables for cities in Europe from 2008 to 2017 (<a class="reference external" href="https://cds.climate.copernicus.eu/cdsapp#!/dataset/sis-urban-climate-cities">https://cds.climate.copernicus.eu/cdsapp#!/dataset/sis-urban-climate-cities</a>)</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Climate variables for cities in Europe from 2008 to 2017 (<a class="reference external" href="https://cds.climate.copernicus.eu/cdsapp#!/dataset/sis-urban-climate-cities">https://cds.climate.copernicus.eu/cdsapp#!/dataset/sis-urban-climate-cities</a>)</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>After <a class="reference external" href="https://cds.climate.copernicus.eu/user/register">register and login</a> to the C3S CDS web portal, you have to download Milan data by specifying the variable of interest together with a time period (year and month). The selected data can be then downloaded as a <em>.zip</em> or <em>.tar</em> file. For this exercise you have to specify the following options before the download:</p>
 <blockquote>
@@ -232,14 +232,14 @@
 <li><p>Format = <em>Zip file (.zip)</em></p></li>
 </ul>
 </div></blockquote>
-<div class="figure align-default" id="id5">
+<div class="figure align-default" id="id7">
 <a class="reference internal image-reference" href="_images/nc_milan_download.png"><img alt="text" src="_images/nc_milan_download.png" style="width: 785.5px; height: 350.5px;" /></a>
-<p class="caption"><span class="caption-text">C3S CDS download page</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">C3S CDS download page</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>The netCDF file is structured as a multidimensional spatial grid where each layer includes air temperature observations over Milan area at each time step (hour) in July 2016.</p>
-<div class="figure align-default" id="id6">
+<div class="figure align-default" id="id8">
 <a class="reference internal image-reference" href="_images/netcdf.png"><img alt="text" src="_images/netcdf.png" style="width: 359.0px; height: 317.0px;" /></a>
-<p class="caption"><span class="caption-text">Schematic of the netCDF structure</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Schematic of the netCDF structure</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -295,9 +295,9 @@
 <p>Name the output file as “<em>air_t_milan_average</em>”. The period (“.”) in the original name of the netCDF file may not be accepted by GRASS GIS as part of the output file name. In case of issues with the presented procedure, you can directly <a class="reference external" href="https://github.com/danioxoli/CA_LCZ_exercise_docs/raw/master/source/files/air_t_milan_average.zip">download the average air temperature raster</a>.</p>
 </div>
 <a class="reference internal image-reference" href="_images/netcdf_processing_3.png"><img alt="text" src="_images/netcdf_processing_3.png" style="width: 768.0px; height: 374.40000000000003px;" /></a>
-<div class="figure align-default" id="id7">
+<div class="figure align-default" id="id9">
 <a class="reference internal image-reference" href="_images/air_t.png"><img alt="text" src="_images/air_t.png" style="width: 336.0px; height: 341.0px;" /></a>
-<p class="caption"><span class="caption-text"><em>Single band raster of the average air temperature [K] for Milan in July 2016</em></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><em>Single band raster of the average air temperature [K] for Milan in July 2016</em></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="raster-zonal-statistics">
@@ -322,17 +322,20 @@
 <h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
 <p>It is possible now to plot the resulting table using e.g. the <a class="reference external" href="https://plugins.qgis.org/plugins/DataPlotly/">Data Plotly</a> <a class="reference internal" href="_images/data_ploty.png"><img alt="dataploty" src="_images/data_ploty.png" style="width: 24.0px; height: 24.0px;" /></a> QGIS plugin. From the QGIS menu, open: <strong>Plugin –&gt; Manage and Install Plugins</strong>, search for <strong>Data Plotly</strong> plugin and install it.</p>
 <p>The difference of average air temperature in each LCZ class can be appreciated e.g. by plotting the columns <em>zone</em> (X-axis) and <em>mean</em> (Y-axis) using a Scatter Plot.</p>
-<div class="figure align-default" id="id8">
+<div class="figure align-default" id="id10">
 <a class="reference internal image-reference" href="_images/final_plot.png"><img alt="text" src="_images/final_plot.png" style="width: 494.40000000000003px; height: 420.8px;" /></a>
-<p class="caption"><span class="caption-text"><em>Results visualization by means of a Scatter Plot</em></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><em>Results visualization by means of a Scatter Plot</em></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition-can-we-observe-and-quantify-differences-in-the-average-air-temperature-within-different-lcz-of-a-city admonition">
 <p class="admonition-title"><strong>Can we observe and quantify differences in the average air temperature within different LCZ of a city?</strong></p>
 <p>The answer is “Yes, we can measure these differences that are around 2 Kelvin degrees between heavily urbanized areas (1 = Compact midrise) and vegetated areas (4 = Low plants) for this case study”</p>
 </div>
 <dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">4</a></span></dt>
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">4</a></span></dt>
 <dd><p><em>Oxoli, D., Ronchetti, G., Minghini, M., Molinari, M. E., Lotfian, M., Sona, G., &amp; Brovelli, M. A. (2018). Measuring urban land cover influence on air temperature through multiple geo-data—The case of Milan, Italy. ISPRS International Journal of Geo-Information, 7(11), 421.</em></p>
+</dd>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">5</a></span></dt>
+<dd><p><em>Loftian, M. (2016). Urban climate modeling: case study of Milan city. Politecnico di Milano (M.Sc. dissertation).</em></p>
 </dd>
 </dl>
 </div>
