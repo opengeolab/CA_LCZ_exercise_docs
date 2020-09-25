@@ -2,8 +2,8 @@
    sphinx-quickstart on Mon Aug 17 11:52:45 2020.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
-
-Hands-on exercise: LCZ and air tempertature analysis with QGIS
+   
+Hands-on exercise: LCZ and air temperature analysis with QGIS
 ===========================================================================
 
 This tutorial will focus on the use of `Copernicus <https://www.copernicus.eu/en>`_ data for assessing local differences in air temperature according to land-use features within highly urbanized areas. 
