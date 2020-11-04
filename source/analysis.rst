@@ -45,7 +45,7 @@ The LCZ raster map of Milan you will use in the exercise has been derived by [4]
 +------------------+---------------------------------------------------------------+
 
 
-The LCZ map of Milan (*s2_lcz_milan.tif*) (*reference system: WGS84/UTM32N | EPSG:32632*) in `GeoTIFF <https://www.ogc.org/standards/geotiff>`_ format together with its predfined `QGIS Style File <https://docs.qgis.org/3.10/en/docs/user_manual/appendices/qgis_file_formats.html#qml-the-qgis-style-file-format>`_ (*s2_lcz_milan.qml*) `can be download here <https://github.com/danioxoli/CA_LCZ_exercise_docs/raw/master/source/files/lcz.zip>`_.
+The LCZ map of Milan (*s2_lcz_milan.tif*) (*reference system: WGS84/UTM32N | EPSG:32632*) in `GeoTIFF <https://www.ogc.org/standards/geotiff>`_ format together with its predfined `QGIS Style File <https://docs.qgis.org/3.10/en/docs/user_manual/appendices/qgis_file_formats.html#qml-the-qgis-style-file-format>`_ (*s2_lcz_milan.qml*) `can be download here <https://github.com/opengeolab/CA_LCZ_exercise_docs/raw/master/source/files/lcz.zip>`_.
 
 .. tip::
 
@@ -141,7 +141,7 @@ netCDF preprocessing
 
 .. tip:: 
 
-   In case of issues with the presented procedure, you can directly `download the projected raster layer from the above step <https://github.com/danioxoli/CA_LCZ_exercise_docs/raw/master/source/files/tas_Milan_UrbClim_2016_07_v1.0_raster_UTM.zip>`_.
+   In case of issues with the presented procedure, you can directly `download the projected raster layer from the above step <https://github.com/opengeolab/CA_LCZ_exercise_docs/raw/master/source/files/tas_Milan_UrbClim_2016_07_v1.0_raster_UTM.zip>`_.
 
 Now, you have obtained a multiband raster layer projected to the same reference system of the LCZ map. The last step consists of computing the average air temperature in July 2016 at each pixel of the grid.
 
@@ -155,7 +155,7 @@ Now, you have obtained a multiband raster layer projected to the same reference 
 
 .. tip:: 
 
-   Name the output file as "*air_t_milan_average*". The period (".") in the original name of the netCDF file may not be accepted by GRASS GIS as part of the output file name. In case of issues with the presented procedure, you can directly `download the average air temperature raster <https://github.com/danioxoli/CA_LCZ_exercise_docs/raw/master/source/files/air_t_milan_average.zip>`_.
+   Name the output file as "*air_t_milan_average*". The period (".") in the original name of the netCDF file may not be accepted by GRASS GIS as part of the output file name. In case of issues with the presented procedure, you can directly `download the average air temperature raster <https://github.com/opengeolab/CA_LCZ_exercise_docs/raw/master/source/files/air_t_milan_average.zip>`_.
 
 
 .. image:: /images/netcdf_processing_3.png
