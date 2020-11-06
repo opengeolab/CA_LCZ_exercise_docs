@@ -29,8 +29,6 @@ You will learn how to access and download `C3S data <https://cds.climate.coperni
    lcz
    analysis
  
-
-_ |licenseicon|
-.. |licenseicon| image:: images/license.png
+.. image:: images/license.png
    :scale: 50% 
 
