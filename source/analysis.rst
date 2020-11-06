@@ -54,7 +54,7 @@ The LCZ map of Milan (*s2_lcz_milan.tif*) (*reference system: WGS84/UTM32N | EPS
 Air temperature data
 +++++++++++++++++++++++
 
-Air temperature data at a city level are included in the `Climate variables for cities in Europe from 2008 to 2017 <https://cds.climate.copernicus.eu/cdsapp#!/dataset/sis-urban-climate-cities?tab=overview>`_ of the C3S CDS, which contains air temperature, specific humidity, relative humidity and wind speed for 100 European cities for the current climate. The variables are provided as netCDF files with an hourly temporal resolution on a 100m x 100 m spatial grid (*reference system: ETRS89/LAEA Europe | EPSG: 3035*). 
+Air temperature data at a city level are included in the `Climate variables for cities in Europe from 2008 to 2017 <https://cds.climate.copernicus.eu/cdsapp#!/dataset/sis-urban-climate-cities?tab=overview>`_ of the C3S CDS, which contains air temperature, specific humidity, relative humidity and wind speed for 100 European cities for the current climate. The variables are provided as netCDF files with an hourly temporal resolution on a 100m x 100m spatial grid (*reference system: ETRS89/LAEA Europe | EPSG: 3035*). 
 
 .. figure:: /images/cds_city_data.png
    :alt: text 
