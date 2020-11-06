@@ -6,8 +6,8 @@ Hands-on Exercise with QGIS
 
 Now that you are aware of all the necessay background information, it is time to do work with the Milan case study. To asses differences in the average air temperature within different LCZ, you will perform the following steps:
 
- * download in your home folder the raw air temperature data from the `C3S CDS <https://cds.climate.copernicus.eu/#!/home>`_ in `netCDF <https://www.ogc.org/standards/netcdf>`_ format and the LCZ map for Milan.
- * open and manipulate the netCDF in QGIS to obtain an analysis-ready raster layer containg the average air temperature for a given time period.
+ * download in your home folder the raw air temperature data from the `C3S CDS <https://cds.climate.copernicus.eu/#!/home>`_ in `netCDF <https://www.ogc.org/standards/netcdf>`_ format and the LCZ map for Milan
+ * open and manipulate the netCDF in QGIS to obtain an analysis-ready raster layer containg the average air temperature for a given time period
  * open the LCZ map in QGIS and perform raster layer zonal statistics to compute the average air temperature within each LCZ class
  * plot and compare the averages using statistical graphs 
 
