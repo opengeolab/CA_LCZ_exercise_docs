@@ -30,5 +30,6 @@ You will learn how to access and download `C3S data <https://cds.climate.coperni
    analysis
  
 .. image:: images/license.png
-   :scale: 50% 
+   :scale: 50 % 
+   :align: left
 
