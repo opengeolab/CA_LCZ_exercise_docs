@@ -18,7 +18,7 @@ import sphinx_rtd_theme
 
 # -- Project information -----------------------------------------------------
 
-project = 'LCZ and air tempertature analysis with QGIS'
+project = 'LCZ and air temperature analysis with QGIS'
 copyright = '2020, Daniele Oxoli'
 author = 'Daniele Oxoli and Maria Antonia Brovelli'
 
