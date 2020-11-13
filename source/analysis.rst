@@ -119,10 +119,12 @@ netCDF preprocessing
 
 * Open a new QGIS project and import as a raster layer (**Layer --> Add Layer --> Add Raster Layer**) the air temperature netCDF (*tas_Milan_UrbClim_2016_07_v1.0.nc*). The layer is imported as a multiband raster in which each band contains the hourly observation of air temperature over Milan (n. of bands = 744). In the following step, you will manipulate the raster file obtained from the netCDF by projecting it to *WGS84/UTM32N | EPSG:32632* and computing the averages of all bands. 
 
+
 * Assign the native projection to the imported multiband raster (*ETRS89/LAEA Europe | EPSG: 3035*) by clicking on the question mark button |questionmark| nearby the layer name in the layer panel
 
 .. |questionmark| image:: images/questionmark.png
    :scale: 70%
+   
    
 * Do **Right Click** on the layer name in the **QGIS Layer Panel** and then: **Export --> Save As...** to save the layer in *GeoTIFF* format by assigning the wanted reference system (*WGS84/UTM32N | EPSG:32632*). 
 
