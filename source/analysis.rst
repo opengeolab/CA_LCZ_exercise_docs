@@ -119,26 +119,30 @@ netCDF preprocessing
 
 * Open a new QGIS project and import as a raster layer (**Layer --> Add Layer --> Add Raster Layer**) the air temperature netCDF (*tas_Milan_UrbClim_2016_07_v1.0.nc*). The layer is imported as a multiband raster in which each band contains the hourly observation of air temperature over Milan (n. of bands = 744). In the following step, you will manipulate the raster file obtained from the netCDF by projecting it to *WGS84/UTM32N | EPSG:32632* and computing the averages of all bands. 
 
-.. * Assign the native projection to the imported multiband raster (*ETRS89/LAEA Europe | EPSG: 3035*) by clicking on the question mark button nearby the layer name in the layer panel
-.. * Do **Right Click** on the layer name in the **QGIS Layer Panel** and then: **Export --> Save As...** to save the layer in *GeoTIFF* format by assigning the wanted reference system (*WGS84/UTM32N | EPSG:32632*). 
+* Assign the native projection to the imported multiband raster (*ETRS89/LAEA Europe | EPSG: 3035*) by clicking on the question mark button |questionmark| nearby the layer name in the layer panel
 
-* Do **Right Click** on the layer name in the **QGIS Layer Panel** and then: **Export --> Save As...** to save the layer in *GeoTIFF* format by assigning its native reference system (*ETRS89/LAEA Europe | EPSG: 3035*). 
+.. |questionmark| image:: images/questionmark.png
+   :scale: 100%
+   
+* Do **Right Click** on the layer name in the **QGIS Layer Panel** and then: **Export --> Save As...** to save the layer in *GeoTIFF* format by assigning the wanted reference system (*WGS84/UTM32N | EPSG:32632*). 
 
-.. image:: /images/netcdf_processing.png
+.. * Do **Right Click** on the layer name in the **QGIS Layer Panel** and then: **Export --> Save As...** to save the layer in *GeoTIFF* format by assigning its native reference system (*ETRS89/LAEA Europe | EPSG: 3035*). 
+
+.. .. image:: /images/netcdf_processing.png
    :alt: text 
    :scale: 80%
 
 
-* Accept the default coordinates conversion procedure suggested by QGIS by clicking **Ok**.
+.. * Accept the default coordinates conversion procedure suggested by QGIS by clicking **Ok**.
 
-.. image:: /images/proj_warning.png
+.. .. image:: /images/proj_warning.png
    :alt: text 
    :scale: 80% 
 
 
-* Create a second copy of the raster layer to assign the same projected reference system of the LCZ map (*WGS84/UTM32N | EPSG:32632*) by following the procedure explained in the previous step.
+.. * Create a second copy of the raster layer to assign the same projected reference system of the LCZ map (*WGS84/UTM32N | EPSG:32632*) by following the procedure explained in the previous step.
 
-.. image:: /images/netcdf_processing_2.png
+.. .. image:: /images/netcdf_processing_2.png
    :alt: text 
    :scale: 80% 
 
