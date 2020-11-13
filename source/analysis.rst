@@ -117,7 +117,10 @@ netCDF preprocessing
 ..    QGIS does not fully support operations on the netCDF file. The operations you will perform in the next steps represent a workaround to obtain an analysis-ready raster file to be used in this exercise. For applications different from this exercise, there is no warranty that this workaround can be employed.  
 
 
-* Open a new QGIS project and import as a raster layer (**Layer --> Add Layer --> Add Raster Layer**) the air temperature netCDF (*tas_Milan_UrbClim_2016_07_v1.0.nc*). The layer is imported as a multiband raster in which each band contains the hourly observation of air temperature over Milan (n. of bands = 744). In the following steps, you will manipulate the raster file obtained from the netCDF by projecting it to *WGS84/UTM32N | EPSG:32632* and computing the averages of all bands. 
+* Open a new QGIS project and import as a raster layer (**Layer --> Add Layer --> Add Raster Layer**) the air temperature netCDF (*tas_Milan_UrbClim_2016_07_v1.0.nc*). The layer is imported as a multiband raster in which each band contains the hourly observation of air temperature over Milan (n. of bands = 744). In the following step, you will manipulate the raster file obtained from the netCDF by projecting it to *WGS84/UTM32N | EPSG:32632* and computing the averages of all bands. 
+
+.. * Assign the native projection to the imported multiband raster (*ETRS89/LAEA Europe | EPSG: 3035*) by clicking on the question mark button nearby the layer name in the layer panel
+.. * Do **Right Click** on the layer name in the **QGIS Layer Panel** and then: **Export --> Save As...** to save the layer in *GeoTIFF* format by assigning the wanted reference system (*WGS84/UTM32N | EPSG:32632*). 
 
 * Do **Right Click** on the layer name in the **QGIS Layer Panel** and then: **Export --> Save As...** to save the layer in *GeoTIFF* format by assigning its native reference system (*ETRS89/LAEA Europe | EPSG: 3035*). 
 
@@ -151,7 +154,7 @@ Now, you have obtained a multiband raster layer projected to the same reference 
 
 .. warning::
 
-   If you use QGIS on Windows, you have to set also the raster values range. In the *r.series* panel, open: **Advanced Parameters --> Ignore values outside this range (lo,hi)**, set e.g. **Min = -1000** and **Max = 1000**.
+   If you use QGIS on Windows, you may need to set also the raster values range. In the *r.series* panel, open: **Advanced Parameters --> Ignore values outside this range (lo,hi)**, set e.g. **Min = -1000** and **Max = 1000**.
 
 .. tip:: 
 
