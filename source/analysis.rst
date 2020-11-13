@@ -122,7 +122,7 @@ netCDF preprocessing
 * Assign the native projection to the imported multiband raster (*ETRS89/LAEA Europe | EPSG: 3035*) by clicking on the question mark button |questionmark| nearby the layer name in the layer panel
 
 .. |questionmark| image:: images/questionmark.png
-   :scale: 100%
+   :scale: 70%
    
 * Do **Right Click** on the layer name in the **QGIS Layer Panel** and then: **Export --> Save As...** to save the layer in *GeoTIFF* format by assigning the wanted reference system (*WGS84/UTM32N | EPSG:32632*). 
 
